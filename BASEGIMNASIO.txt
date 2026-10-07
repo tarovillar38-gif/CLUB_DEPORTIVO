@@ -1,0 +1,69 @@
+DROP DATABASE IF EXISTS club;
+CREATE DATABASE club;
+USE club;
+
+/* ACA VOY CREANDO USUARIOS DEL SISTEMA PARA PODER PROGRAMAR EL LOGIN */
+
+CREATE TABLE usuarios (
+    id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_usuario VARCHAR(30) UNIQUE NOT NULL,
+    contrasenia VARCHAR(30) NOT NULL
+);
+
+/*NOS CARGO A NOSOTROS*/
+INSERT INTO usuarios (nombre_usuario, contrasenia)
+VALUES
+    ('Rodrigo', '123456'),
+    ('Nairovis', '123456'),
+    ('Leo', '123456'),
+    ('Enrique', '123456');
+
+
+/* ACA LA TABLA DE LA CLASE PERSONA */
+
+CREATE TABLE persona (
+    id_persona INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(30) NOT NULL,
+    apellido VARCHAR(30) NOT NULL,
+    documento VARCHAR(15) NOT NULL UNIQUE
+);
+
+
+/* ACA LA DE LA CLASE SOCIO */
+
+CREATE TABLE socio (
+    id_socio INT PRIMARY KEY AUTO_INCREMENT,
+    id_persona INT NOT NULL UNIQUE,
+    fecha_alta DATE NOT NULL DEFAULT (CURRENT_DATE),
+    FOREIGN KEY (id_persona) REFERENCES persona(id_persona)
+);
+
+
+/* ACA LA CLASE CARNET */
+
+CREATE TABLE carnet (
+    nro_carnet INT PRIMARY KEY AUTO_INCREMENT,
+    id_socio INT NOT NULL UNIQUE,
+    fecha_entrega DATE NOT NULL,
+    FOREIGN KEY (id_socio) REFERENCES socio(id_socio)
+);
+
+
+/* ACA LOS PAGOS Y VENCIMIENTOS */
+
+CREATE TABLE cuota (
+    id_cuota INT PRIMARY KEY AUTO_INCREMENT,
+    id_persona INT NOT NULL,
+    tipo_cuota VARCHAR(10) NOT NULL,
+    monto DECIMAL(10,2) NOT NULL,
+    fecha_pago DATE NOT NULL,
+    fecha_inicio DATE NOT NULL,
+    fecha_vencimiento DATE NOT NULL,
+    FOREIGN KEY (id_persona) REFERENCES persona(id_persona)
+);
+
+/*NO CREE UNA TABLA DE NO SOCIOS.ESA INFO SE PUEDE SACAR DEL TIPO DE CUOTA QUE ABONA
+ES DECIR DIARIA O MENSUAL. SUPONGO QUE CUANDO SE IMPLEMENTE VA A SER POSIBLE DISCERNR ASI*/
+
+
+
