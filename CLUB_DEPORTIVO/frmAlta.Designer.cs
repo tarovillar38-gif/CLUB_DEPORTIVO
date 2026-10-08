@@ -89,7 +89,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(165, 280);
+            label2.Location = new Point(52, 280);
             label2.Name = "label2";
             label2.Size = new Size(56, 15);
             label2.TabIndex = 6;
@@ -98,7 +98,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(165, 310);
+            label3.Location = new Point(301, 280);
             label3.Name = "label3";
             label3.Size = new Size(60, 15);
             label3.TabIndex = 7;
@@ -107,7 +107,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(165, 341);
+            label4.Location = new Point(335, 326);
             label4.Name = "label4";
             label4.Size = new Size(80, 15);
             label4.TabIndex = 8;
@@ -115,23 +115,23 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(262, 272);
+            textBox1.Location = new Point(124, 273);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(273, 23);
+            textBox1.Size = new Size(154, 23);
             textBox1.TabIndex = 9;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(261, 302);
+            textBox2.Location = new Point(367, 273);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(274, 23);
+            textBox2.Size = new Size(244, 23);
             textBox2.TabIndex = 10;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(261, 333);
+            textBox3.Location = new Point(434, 318);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(274, 23);
+            textBox3.Size = new Size(177, 23);
             textBox3.TabIndex = 11;
             // 
             // button1
