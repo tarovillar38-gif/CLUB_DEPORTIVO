@@ -32,9 +32,9 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            btn_Ingresar = new Button();
+            txtUsuario = new TextBox();
+            txtContrasena = new TextBox();
+            btnIngresar = new Button();
             ((System.ComponentModel.ISupportInitialize)pbx1).BeginInit();
             SuspendLayout();
             // 
@@ -51,7 +51,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(283, 198);
+            label1.Location = new Point(283, 208);
             label1.Name = "label1";
             label1.Size = new Size(210, 15);
             label1.TabIndex = 1;
@@ -61,7 +61,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(199, 246);
+            label2.Location = new Point(207, 246);
             label2.Name = "label2";
             label2.Size = new Size(56, 15);
             label2.TabIndex = 2;
@@ -71,37 +71,38 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(172, 297);
+            label3.Location = new Point(180, 283);
             label3.Name = "label3";
             label3.Size = new Size(83, 15);
             label3.TabIndex = 3;
             label3.Text = "CONTRASEÑA";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.Location = new Point(269, 238);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(244, 23);
-            textBox1.TabIndex = 4;
+            txtUsuario.Location = new Point(269, 238);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(244, 23);
+            txtUsuario.TabIndex = 4;
+            txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
-            // textBox2
+            // txtContrasena
             // 
-            textBox2.Location = new Point(269, 294);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(244, 23);
-            textBox2.TabIndex = 5;
+            txtContrasena.Location = new Point(269, 280);
+            txtContrasena.Name = "txtContrasena";
+            txtContrasena.Size = new Size(241, 23);
+            txtContrasena.TabIndex = 7;
+            txtContrasena.TextChanged += txtContrasena_TextChanged;
             // 
-            // btn_Ingresar
+            // btnIngresar
             // 
-            btn_Ingresar.BackColor = Color.Red;
-            btn_Ingresar.ForeColor = Color.White;
-            btn_Ingresar.Location = new Point(301, 356);
-            btn_Ingresar.Name = "btn_Ingresar";
-            btn_Ingresar.Size = new Size(192, 43);
-            btn_Ingresar.TabIndex = 6;
-            btn_Ingresar.Text = "INGRESAR";
-            btn_Ingresar.UseVisualStyleBackColor = false;
-            btn_Ingresar.Click += button1_Click;
+            btnIngresar.BackColor = Color.Lime;
+            btnIngresar.Location = new Point(302, 339);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new Size(172, 35);
+            btnIngresar.TabIndex = 8;
+            btnIngresar.Text = "INGRESAR";
+            btnIngresar.UseVisualStyleBackColor = false;
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // Frm1
             // 
@@ -109,9 +110,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(btn_Ingresar);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(btnIngresar);
+            Controls.Add(txtContrasena);
+            Controls.Add(txtUsuario);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -130,8 +131,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button btn_Ingresar;
+        private TextBox txtUsuario;
+        private TextBox txtContrasena;
+        private Button btnIngresar;
     }
 }
