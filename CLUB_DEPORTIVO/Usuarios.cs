@@ -10,7 +10,7 @@ namespace CLUB_DEPORTIVO
             var tabla = new DataTable();
 
             using var sqlCon = Conexion.getInstancia().CrearConexion();
-            using var comando = new MySqlCommand("IngresoLogin", sqlCon) { CommandType = CommandType.StoredProcedure };
+            using var comando = new MySqlCommand("ingresoLogin", sqlCon) { CommandType = CommandType.StoredProcedure };
 
             comando.Parameters.Add("p_usuario", MySqlDbType.VarChar).Value = usuario;
             comando.Parameters.Add("p_clave", MySqlDbType.VarChar).Value = contrasenia;
