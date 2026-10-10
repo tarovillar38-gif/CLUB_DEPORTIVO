@@ -1,12 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System. Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-
-namespace diseñoLogin
+namespace CLUB_DEPORTIVO
 {
     public class Conexion
     {
@@ -15,7 +10,8 @@ namespace diseñoLogin
         private string puerto;
         private string usuario;
         private string clave;
-        private static Conexion con = null;
+
+        private static readonly Lazy<Conexion> instance = new Lazy<Conexion>(() => new Conexion());
 
         private Conexion()
         {
@@ -23,41 +19,30 @@ namespace diseñoLogin
             servidor = "localhost";
             puerto = "3306";
             usuario = "root";
-            clave = "";
+            clave = "Nahi.2302";
         }
 
         public MySqlConnection CrearConexion()
         {
-            MySqlConnection? cadena = new MySqlConnection();
+            // Construir connection string de forma más explícita
+            var builder = new MySqlConnectionStringBuilder
+            {
+                Server = servidor,
+                Port = uint.Parse(puerto),
+                Database = baseDatos,
+                UserID = usuario,
+                Password = clave
+            };
 
-            try
-            {
-                cadena.ConnectionString = "datasource=" + this.servidor +
-                ";port=" + this.puerto +
-                ";username=" + this.usuario +
-                ";password=" + this.clave +
-                ";Database=" + this.baseDatos;
-            }
-            catch (Exception ex)
-            {
-                cadena = null;
-                throw;
-            }
-            return cadena;
+            return new MySqlConnection(builder.ConnectionString);
         }
-        // para evaluar la instancia de la conectividad
+
+        // para evaluar la instancia de la conectividad (thread-safe)
         public static Conexion getInstancia()
         {
-            if (con == null) // quiere decir que la conexion esta cerrada
-            {
-                con = new Conexion(); // se crea una nueva
-            }
-            return con;
+            return instance.Value;
         }
-
     }
-
-
 }
 
     

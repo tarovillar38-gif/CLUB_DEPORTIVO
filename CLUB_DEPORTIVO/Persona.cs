@@ -6,20 +6,19 @@ namespace CLUB_DEPORTIVO
 {
     public class Persona
     {
-        //vamos a definir los atributos de la clase persona
-        private string nombre;
-        private string apellido;
-        private string tipoDocumento;
-        private string numeroDocumento;
+        // Atributos como propiedades para permitir acceso y persistencia
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string TipoDocumento { get; set; }
+        public string NumeroDocumento { get; set; }
 
-        //vamos a definir el constructor de la clase persona
-
+        // Constructor
         public Persona(string nombre, string apellido, string tipoDocumento, string numeroDocumento)
         {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.tipoDocumento = tipoDocumento;
-            this.numeroDocumento = numeroDocumento;
+            Nombre = nombre;
+            Apellido = apellido;
+            TipoDocumento = tipoDocumento;
+            NumeroDocumento = numeroDocumento;
         }
     }
 }

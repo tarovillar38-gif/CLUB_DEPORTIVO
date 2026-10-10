@@ -68,7 +68,6 @@
             lblDni.Size = new Size(90, 15);
             lblDni.TabIndex = 3;
             lblDni.Text = "INGRESE EL DNI";
-            lblDni.Click += label1_Click;
             // 
             // txtDni
             // 
@@ -150,7 +149,6 @@
             label1.Size = new Size(112, 15);
             label1.TabIndex = 13;
             label1.Text = "MONTO A ABONAR";
-            label1.Click += label1_Click_1;
             // 
             // lblFechaDePago
             // 

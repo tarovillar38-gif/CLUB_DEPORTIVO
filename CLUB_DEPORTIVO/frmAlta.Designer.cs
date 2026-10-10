@@ -62,7 +62,6 @@
             label1.Size = new Size(209, 15);
             label1.TabIndex = 3;
             label1.Text = "INGRESE LOS DATOS DEL SOLICITANTE";
-            label1.Click += label1_Click;
             // 
             // radioButton1
             // 
