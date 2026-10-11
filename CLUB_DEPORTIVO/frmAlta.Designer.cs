@@ -32,15 +32,23 @@
             label1 = new Label();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            lblNombre = new Label();
+            lblApellido = new Label();
+            lblDocumento = new Label();
+            txtNombre = new TextBox();
+            txtApellido = new TextBox();
+            txtDocumento = new TextBox();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            lblTipo = new Label();
+            cmbTipo = new ComboBox();
+            lblTelefono = new Label();
+            txtTelefono = new TextBox();
+            txtMail = new TextBox();
+            lblMail = new Label();
+            chkAptoMedico = new CheckBox();
+            chkFichaPersonal = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pbx1).BeginInit();
             SuspendLayout();
             // 
@@ -49,7 +57,7 @@
             pbx1.Image = Properties.Resources.ESCUDO_CLUB;
             pbx1.Location = new Point(263, 12);
             pbx1.Name = "pbx1";
-            pbx1.Size = new Size(272, 183);
+            pbx1.Size = new Size(208, 110);
             pbx1.SizeMode = PictureBoxSizeMode.Zoom;
             pbx1.TabIndex = 2;
             pbx1.TabStop = false;
@@ -57,7 +65,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(301, 207);
+            label1.Location = new Point(262, 125);
             label1.Name = "label1";
             label1.Size = new Size(209, 15);
             label1.TabIndex = 3;
@@ -66,7 +74,7 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(312, 238);
+            radioButton1.Location = new Point(266, 143);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(60, 19);
             radioButton1.TabIndex = 4;
@@ -77,7 +85,7 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(390, 238);
+            radioButton2.Location = new Point(367, 143);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(81, 19);
             radioButton2.TabIndex = 5;
@@ -85,99 +93,182 @@
             radioButton2.Text = "NO SOCIO";
             radioButton2.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lblNombre
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(52, 280);
-            label2.Name = "label2";
-            label2.Size = new Size(56, 15);
-            label2.TabIndex = 6;
-            label2.Text = "NOMBRE";
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(28, 176);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(56, 15);
+            lblNombre.TabIndex = 6;
+            lblNombre.Text = "NOMBRE";
             // 
-            // label3
+            // lblApellido
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(301, 280);
-            label3.Name = "label3";
-            label3.Size = new Size(60, 15);
-            label3.TabIndex = 7;
-            label3.Text = "APELLIDO";
+            lblApellido.AutoSize = true;
+            lblApellido.Location = new Point(262, 176);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(60, 15);
+            lblApellido.TabIndex = 7;
+            lblApellido.Text = "APELLIDO";
             // 
-            // label4
+            // lblDocumento
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(335, 326);
-            label4.Name = "label4";
-            label4.Size = new Size(80, 15);
-            label4.TabIndex = 8;
-            label4.Text = "DOCUMENTO";
+            lblDocumento.AutoSize = true;
+            lblDocumento.Location = new Point(242, 222);
+            lblDocumento.Name = "lblDocumento";
+            lblDocumento.Size = new Size(80, 15);
+            lblDocumento.TabIndex = 8;
+            lblDocumento.Text = "DOCUMENTO";
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Location = new Point(124, 273);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(154, 23);
-            textBox1.TabIndex = 9;
+            txtNombre.Location = new Point(90, 173);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(154, 23);
+            txtNombre.TabIndex = 9;
             // 
-            // textBox2
+            // txtApellido
             // 
-            textBox2.Location = new Point(367, 273);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(244, 23);
-            textBox2.TabIndex = 10;
+            txtApellido.Location = new Point(332, 173);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(160, 23);
+            txtApellido.TabIndex = 10;
             // 
-            // textBox3
+            // txtDocumento
             // 
-            textBox3.Location = new Point(434, 318);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(177, 23);
-            textBox3.TabIndex = 11;
+            txtDocumento.Location = new Point(332, 214);
+            txtDocumento.Name = "txtDocumento";
+            txtDocumento.Size = new Size(160, 23);
+            txtDocumento.TabIndex = 11;
             // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(128, 255, 128);
-            button1.Location = new Point(199, 382);
+            button1.Location = new Point(117, 347);
             button1.Name = "button1";
             button1.Size = new Size(127, 28);
             button1.TabIndex = 12;
             button1.Text = "GUARDAR";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(255, 255, 128);
-            button2.Location = new Point(349, 382);
+            button2.Location = new Point(309, 347);
             button2.Name = "button2";
             button2.Size = new Size(122, 28);
             button2.TabIndex = 13;
             button2.Text = "LIMPIAR";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
             button3.BackColor = Color.Red;
-            button3.Location = new Point(489, 382);
+            button3.Location = new Point(486, 347);
             button3.Name = "button3";
             button3.Size = new Size(122, 28);
             button3.TabIndex = 14;
             button3.Text = "VOLVER";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // lblTipo
+            // 
+            lblTipo.AutoSize = true;
+            lblTipo.Location = new Point(28, 219);
+            lblTipo.Name = "lblTipo";
+            lblTipo.Size = new Size(32, 15);
+            lblTipo.TabIndex = 16;
+            lblTipo.Text = "TIPO";
+            // 
+            // cmbTipo
+            // 
+            cmbTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTipo.FormattingEnabled = true;
+            cmbTipo.Items.AddRange(new object[] { "DNI", "PASAPORTE", "C.I. ", "OTRO" });
+            cmbTipo.Location = new Point(90, 216);
+            cmbTipo.Name = "cmbTipo";
+            cmbTipo.Size = new Size(121, 23);
+            cmbTipo.TabIndex = 17;
+            // 
+            // lblTelefono
+            // 
+            lblTelefono.AutoSize = true;
+            lblTelefono.Location = new Point(509, 176);
+            lblTelefono.Name = "lblTelefono";
+            lblTelefono.Size = new Size(21, 15);
+            lblTelefono.TabIndex = 18;
+            lblTelefono.Text = "Tel";
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(537, 175);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(152, 23);
+            txtTelefono.TabIndex = 19;
+            // 
+            // txtMail
+            // 
+            txtMail.Location = new Point(540, 217);
+            txtMail.Name = "txtMail";
+            txtMail.Size = new Size(149, 23);
+            txtMail.TabIndex = 20;
+            // 
+            // lblMail
+            // 
+            lblMail.AutoSize = true;
+            lblMail.Location = new Point(509, 222);
+            lblMail.Name = "lblMail";
+            lblMail.Size = new Size(30, 15);
+            lblMail.TabIndex = 21;
+            lblMail.Text = "Mail";
+            // 
+            // chkAptoMedico
+            // 
+            chkAptoMedico.AutoSize = true;
+            chkAptoMedico.Location = new Point(231, 267);
+            chkAptoMedico.Name = "chkAptoMedico";
+            chkAptoMedico.Size = new Size(95, 19);
+            chkAptoMedico.TabIndex = 22;
+            chkAptoMedico.Text = "Apto Medico";
+            chkAptoMedico.UseVisualStyleBackColor = true;
+            chkAptoMedico.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // chkFichaPersonal
+            // 
+            chkFichaPersonal.AutoSize = true;
+            chkFichaPersonal.Location = new Point(413, 267);
+            chkFichaPersonal.Name = "chkFichaPersonal";
+            chkFichaPersonal.Size = new Size(102, 19);
+            chkFichaPersonal.TabIndex = 23;
+            chkFichaPersonal.Text = "Ficha Personal";
+            chkFichaPersonal.UseVisualStyleBackColor = true;
             // 
             // frmAltaSocios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(740, 450);
+            Controls.Add(chkFichaPersonal);
+            Controls.Add(chkAptoMedico);
+            Controls.Add(lblMail);
+            Controls.Add(txtMail);
+            Controls.Add(txtTelefono);
+            Controls.Add(lblTelefono);
+            Controls.Add(cmbTipo);
+            Controls.Add(lblTipo);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(txtDocumento);
+            Controls.Add(txtApellido);
+            Controls.Add(txtNombre);
+            Controls.Add(lblDocumento);
+            Controls.Add(lblApellido);
+            Controls.Add(lblNombre);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
             Controls.Add(label1);
@@ -195,14 +286,22 @@
         private Label label1;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private Label lblNombre;
+        private Label lblApellido;
+        private Label lblDocumento;
+        private TextBox txtNombre;
+        private TextBox txtApellido;
+        private TextBox txtDocumento;
         private Button button1;
         private Button button2;
         private Button button3;
+        private Label lblTipo;
+        private ComboBox cmbTipo;
+        private Label lblTelefono;
+        private TextBox txtTelefono;
+        private TextBox txtMail;
+        private Label lblMail;
+        private CheckBox chkAptoMedico;
+        private CheckBox chkFichaPersonal;
     }
 }

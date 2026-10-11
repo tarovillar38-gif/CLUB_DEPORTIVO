@@ -30,9 +30,17 @@ namespace CLUB_DEPORTIVO.Resources
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Abrir el formulario de alta de socios
+            var alta = new CLUB_DEPORTIVO.frmAltaSocios();
+            alta.ShowDialog();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
-
+            //cierra el formulario  
+            this.Close();
         }
     }
 }

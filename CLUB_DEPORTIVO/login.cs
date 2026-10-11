@@ -74,7 +74,14 @@ namespace CLUB_DEPORTIVO
 
                 if (tabla != null && tabla.Rows.Count > 0)
                 {
-                    // Credenciales válidas: abrir menú principal y mantener el login detrás
+                    // Credenciales válidas: limpiar campos de entrada antes de abrir el menú
+                    txtUsuario.Text = "USUARIO";
+                    txtUsuario.ForeColor = Color.DimGray;
+                    txtContrasena.Text = "CONTRASEÑA";
+                    txtContrasena.ForeColor = Color.DimGray;
+                    txtContrasena.UseSystemPasswordChar = false;
+
+                    // Abrir menú principal y mantener el login detrás
                     var menu = new Resources.menu_principal();
                     this.Hide();
                     menu.ShowDialog();
@@ -84,6 +91,11 @@ namespace CLUB_DEPORTIVO
                 else
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Limpiar solo el campo de contraseña después de un intento fallido
+                    txtContrasena.Text = "CONTRASEÑA";
+                    txtContrasena.ForeColor = Color.DimGray;
+                    txtContrasena.UseSystemPasswordChar = false;
+                    txtContrasena.Focus();
                 }
             }
             catch (Exception ex)

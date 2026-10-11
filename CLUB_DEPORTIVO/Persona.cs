@@ -10,7 +10,7 @@ namespace CLUB_DEPORTIVO
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string TipoDocumento { get; set; }
-        public string NumeroDocumento { get; set; }
+        public string Documento { get; set; }
 
         // Constructor
         public Persona(string nombre, string apellido, string tipoDocumento, string numeroDocumento)
@@ -18,7 +18,7 @@ namespace CLUB_DEPORTIVO
             Nombre = nombre;
             Apellido = apellido;
             TipoDocumento = tipoDocumento;
-            NumeroDocumento = numeroDocumento;
+            Documento = numeroDocumento;
         }
     }
 }

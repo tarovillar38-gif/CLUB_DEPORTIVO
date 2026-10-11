@@ -33,7 +33,7 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            button4 = new Button();
+            btnSalir = new Button();
             ((System.ComponentModel.ISupportInitialize)pbx1).BeginInit();
             SuspendLayout();
             // 
@@ -66,6 +66,7 @@
             button1.TabIndex = 3;
             button1.Text = "NUEVO SOCIO/NO SOCIO";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -88,17 +89,17 @@
             button3.Text = "VENCIMIENTOS DEL DIA";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnSalir
             // 
-            button4.BackColor = Color.Red;
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(352, 366);
-            button4.Name = "button4";
-            button4.Size = new Size(99, 34);
-            button4.TabIndex = 6;
-            button4.Text = "SALIR";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            btnSalir.BackColor = Color.Red;
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Location = new Point(352, 366);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(99, 34);
+            btnSalir.TabIndex = 6;
+            btnSalir.Text = "SALIR";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += button4_Click;
             // 
             // menu_principal
             // 
@@ -106,7 +107,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(button4);
+            Controls.Add(btnSalir);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -127,6 +128,6 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private Button button4;
+        private Button btnSalir;
     }
 }
